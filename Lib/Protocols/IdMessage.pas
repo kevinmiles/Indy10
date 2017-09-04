@@ -794,8 +794,8 @@ begin
 
   // TODO: when STRING_IS_ANSI is defined, provide a way for the user to specify the AnsiString encoding for header values...
 
-  {CC: If From has no Name field, use the Address field as the Name field by setting last param to True (for SA)...}
-  FLastGeneratedHeaders.Values['From'] := EncodeAddress(FromList, HeaderEncoding, ISOCharSet, True); {do not localize}
+  // P.Nehez, 1 Sep 2017 - allowing to pass empty Name field into "From"
+  FLastGeneratedHeaders.Values['From'] := EncodeAddress(FromList, HeaderEncoding, ISOCharSet); {do not localize}
   FLastGeneratedHeaders.Values['Subject'] := EncodeHeader(Subject, '', HeaderEncoding, ISOCharSet); {do not localize}
   FLastGeneratedHeaders.Values['To'] := EncodeAddress(Recipients, HeaderEncoding, ISOCharSet); {do not localize}
   FLastGeneratedHeaders.Values['Cc'] := EncodeAddress(CCList, HeaderEncoding, ISOCharSet); {do not localize}
