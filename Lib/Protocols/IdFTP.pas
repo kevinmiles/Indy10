@@ -832,7 +832,7 @@ type
     procedure DoOnDirParseStart;
     procedure DoOnDirParseEnd;
 
-    procedure FinalizeDataOperation;
+    procedure FinalizeDataOperation; virtual;
     procedure SetTZInfo(const Value: TIdFTPTZInfo);
     function IsSiteZONESupported : Boolean;
     function IndexOfFeatLine(const AFeatLine : String):Integer;
